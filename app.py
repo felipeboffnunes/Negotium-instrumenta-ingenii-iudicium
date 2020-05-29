@@ -10,8 +10,10 @@ from flask import Flask
 from components.pages import pages
 
 external_stylesheets = [dbc.themes.LUX]
-server = Flask(__name__)
-app = dash.Dash(__name__, server=server, external_stylesheets=external_stylesheets)
+
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+server = app.server
 
 SIDEBAR_STYLE = {
     "position": "fixed",
