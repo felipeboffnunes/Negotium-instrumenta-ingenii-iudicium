@@ -95,7 +95,25 @@ power_bi = html.Div([
                         src="https://app.powerbi.com/reportEmbed?reportId=425b03a7-7b37-43d2-ac73-33a34a8e9e46&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
                     
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="População por Ano e Estado")
+                    ), label="Barras População"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
+
+                        src="https://app.powerbi.com/reportEmbed?reportId=83003062-249b-48bf-94b8-e583212296f9&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    ), label="Mapa População"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
+
+                        src="https://app.powerbi.com/reportEmbed?reportId=3ed8ce18-db14-429f-b898-27df3665b06d&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    ), label="Mapa Domicílios")
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
 
