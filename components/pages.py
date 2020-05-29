@@ -113,7 +113,16 @@ power_bi = html.Div([
                         src="https://app.powerbi.com/reportEmbed?reportId=3ed8ce18-db14-429f-b898-27df3665b06d&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
                     
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="Mapa Domicílios")
+                    ), label="Mapa Domicílios"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
+
+                        src="https://app.powerbi.com/reportEmbed?reportId=c4278dba-e164-4763-8854-a8f14402fe4e&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    ), label="População por Idade")
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
 
