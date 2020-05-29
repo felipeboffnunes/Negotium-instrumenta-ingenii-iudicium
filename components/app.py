@@ -5,11 +5,13 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
+from flask import Flask
+
 from components.pages import pages
 
 external_stylesheets = [dbc.themes.LUX]
-
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+server = Flask(__name__)
+app = dash.Dash(__name__, server=server, external_stylesheets=external_stylesheets)
 
 SIDEBAR_STYLE = {
     "position": "fixed",
