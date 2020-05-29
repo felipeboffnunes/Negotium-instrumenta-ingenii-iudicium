@@ -24,7 +24,7 @@ tableau = html.Div([
             
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
                     )
-                , label="Stacked Age Population"),
+                , label="Stacked Age Population", id="black-border"),
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
@@ -66,6 +66,7 @@ tableau = html.Div([
                     ), label="Maps Residences"),
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
+
 power_bi = html.Div([
             dcc.Tabs([
                 dcc.Tab(
@@ -85,7 +86,16 @@ power_bi = html.Div([
                         src="https://app.powerbi.com/reportEmbed?reportId=350246cf-b777-4a83-9b67-6b2503a8424c&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
                     
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="Domicílios por Estado e Categoria")
+                    ), label="Domicílios por Estado e Categoria"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
+
+                        src="https://app.powerbi.com/reportEmbed?reportId=425b03a7-7b37-43d2-ac73-33a34a8e9e46&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    ), label="População por Ano e Estado")
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
 

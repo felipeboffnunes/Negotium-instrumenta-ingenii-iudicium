@@ -5,8 +5,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
-from flask import Flask
-
 from components.pages import pages
 
 external_stylesheets = [dbc.themes.LUX]
@@ -28,7 +26,6 @@ SIDEBAR_STYLE = {
 CONTENT_STYLE = {
     "marginLeft": "17rem"
 }
-
 
 sidebar = html.Div(
     [
