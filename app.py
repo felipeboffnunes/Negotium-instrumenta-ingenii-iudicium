@@ -39,9 +39,8 @@ sidebar = html.Div(
                 dbc.NavLink("Home",            href="/page-1", id="page-1-link"),
                 dbc.NavLink("Tableau Public",  href="/page-2", id="page-2-link"),
                 dbc.NavLink("Power BI",        href="/page-3", id="page-3-link"),
-                dbc.NavLink("QlikView",        href="/page-4", id="page-4-link"),
-                dbc.NavLink("Python (Altair)", href="/page-5", id="page-5-link"),
-                dbc.NavLink("About",           href="/page-6", id="page-6-link")
+                dbc.NavLink("Zoho Analytics",  href="/page-4", id="page-4-link"),
+                dbc.NavLink("About",           href="/page-5", id="page-5-link")
             ],
             vertical=True,
             pills=True,
@@ -57,14 +56,14 @@ app.layout = html.Div([dcc.Location(id="url"), sidebar, content])
 # this callback uses the current pathname to set the active state of the
 # corresponding nav link to true, allowing users to see page they are on
 @app.callback(
-    [Output(f"page-{i}-link", "active") for i in range(1, 7)],
+    [Output(f"page-{i}-link", "active") for i in range(1, 6)],
     [Input("url", "pathname")],
 )
 def toggle_active_links(pathname):
     if pathname == "/":
         # Treat page 1 as the homepage / index
         return True, False, False
-    return [pathname == f"/page-{i}" for i in range(1, 7)]
+    return [pathname == f"/page-{i}" for i in range(1, 6)]
 
 @app.callback(Output("page-content", "children"), [Input("url", "pathname")])
 def render_page_content(pathname):
@@ -74,14 +73,10 @@ def render_page_content(pathname):
         return pages['tableau']
     elif pathname == "/page-3":
         return pages['power_bi']
-    elif pathname == "/page-3":
-        return pages['altair']
     elif pathname == "/page-4":
-        return pages['altair']
+        return pages['zoho']
     elif pathname == "/page-5":
-        return pages['altair']
-    elif pathname == "/page-6":
-        return pages['altair']
+        return pages['zoho']
     # If the user tries to reach a different page, return a 404 message
     return dbc.Jumbotron(
         [

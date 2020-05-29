@@ -126,17 +126,38 @@ power_bi = html.Div([
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
 
-altair = html.Div([
-            html.Iframe(
-                id='plot-altair',
-                sandbox='allow-scripts',
+zoho = html.Div([
+            dcc.Tabs([
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
 
-                srcDoc=altair_visualization,
+                        src="https://analytics.zoho.com/open-view/2237381000000004442",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    ), label="População por Idade e Região"),
+                    dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
 
-                style={'borderWidth': '0px', 'width' : '100%', 'height' : '100vh', 'padding': '0px'}
-            )     
+                        src="https://analytics.zoho.com/open-view/2237381000000004952/a8ea56c880aed24e60b48af7315e445f",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    ), label="Mapa Domicílios"),
+                    dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
+
+                        src="https://analytics.zoho.com/open-view/2237381000000007048",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    ), label="Mapa População"),
+            ])
         ], style={'height' : '100vh', 'padding': '0px'})
 
-pages = {'altair' : altair,
+pages = {'zoho' : zoho,
          'tableau' : tableau,
          'power_bi' : power_bi}
