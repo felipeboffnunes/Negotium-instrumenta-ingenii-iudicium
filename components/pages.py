@@ -125,7 +125,7 @@ power_bi = html.Div([
                     ), label="População por Idade")
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
-
+        
 zoho = html.Div([
             dcc.Tabs([
                 dcc.Tab(
@@ -155,6 +155,15 @@ zoho = html.Div([
                     
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
                     ), label="Mapa População"),
+                    dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
+
+                        src="https://analytics.zoho.com/open-view/2240641000000003762",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    ), label="Barra Domicílios"),
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
 
