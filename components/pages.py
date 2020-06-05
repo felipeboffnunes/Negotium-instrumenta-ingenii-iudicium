@@ -1,8 +1,6 @@
 import dash_core_components as dcc
 import dash_html_components as html
 
-from components.altair.altair_visualization import altair_visualization
-
 tableau = html.Div([
             dcc.Tabs([
                 dcc.Tab(
@@ -14,37 +12,7 @@ tableau = html.Div([
             
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
                     )
-                , label="Timeseries Population"),
-                dcc.Tab(
-                    html.Iframe(
-                        id='plot',
-                        sandbox='allow-same-origin allow-scripts',
-
-                        src="https://public.tableau.com/views/CensusBrazil2010-StackedAgePopulation/Painel2?:display_count=y&:origin=viz_share_link:showVizHome=no&:embed=true",
-            
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    )
-                , label="Stacked Age Population", id="black-border"),
-                dcc.Tab(
-                    html.Iframe(
-                        id='plot',
-                        sandbox='allow-same-origin allow-scripts',
-
-                        src="https://public.tableau.com/views/CensusBrazil2010-BarsPopulation/Painel3?:display_count=y&publish=yes&:origin=viz_share_link:showVizHome=no&:embed=true",
-            
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    )
-                , label="Bars Population"),
-                dcc.Tab(
-                    html.Iframe(
-                        id='plot',
-                        sandbox='allow-same-origin allow-scripts',
-
-                        src="https://public.tableau.com/views/CensusBrazil2010-CirclesResidences/Painel4?:display_count=y&publish=yes&:origin=viz_share_link:showVizHome=no&:embed=true",
-            
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    )
-                , label="Circles Residences"),
+                , label="População por Ano e Estado"),
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
@@ -54,7 +22,27 @@ tableau = html.Div([
             
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
                     )
-                , label="Maps Population"),
+                , label="Mapa População"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        sandbox='allow-same-origin allow-scripts',
+
+                        src="https://public.tableau.com/views/CensusBrazil2010-BarsPopulation/Painel3?:display_count=y&publish=yes&:origin=viz_share_link:showVizHome=no&:embed=true",
+            
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    )
+                , label="Barras População"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        sandbox='allow-same-origin allow-scripts',
+
+                        src="https://public.tableau.com/views/CensusBrazil2010-StackedAgePopulation/Painel2?:display_count=y&:origin=viz_share_link:showVizHome=no&:embed=true",
+            
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    )
+                , label="População por Idade", id="black-border"),
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
@@ -63,7 +51,19 @@ tableau = html.Div([
                         src="https://public.tableau.com/views/CensusBrazil2010-MapsResidences/Painel6?:display_count=y&publish=yes&:origin=viz_share_link:showVizHome=no&:embed=true",
             
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="Maps Residences"),
+                    ), label="Mapa Domicílios"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        sandbox='allow-same-origin allow-scripts',
+
+                        src="https://public.tableau.com/views/CensusBrazil2010-CirclesResidences/Painel4?:display_count=y&publish=yes&:origin=viz_share_link:showVizHome=no&:embed=true",
+            
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                    )
+                , label="Domicílios por Estado e Categoria"),
+                
+                
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
 
@@ -72,57 +72,57 @@ power_bi = html.Div([
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
-                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
+                        sandbox='allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-popups allow-forms',
 
-                        src="https://app.powerbi.com/reportEmbed?reportId=1bc58b44-49a5-4986-902b-45de42f4d5bb&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
+                        src="https://app.powerbi.com/reportEmbed?reportId=176dce97-cbdb-42a9-8e9c-58acd4f8beb0&autoAuth=true&ctid=8e9749c8-eb2c-4a24-bdf5-d4f3510f7622&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D",
                     
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '80vh', 'padding': '0px'}
                     ), label="População por Ano e Estado"),
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
                         sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
 
-                        src="https://app.powerbi.com/reportEmbed?reportId=350246cf-b777-4a83-9b67-6b2503a8424c&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
+                        src="https://app.powerbi.com/reportEmbed?reportId=604baa68-bb74-419b-a37a-017b70d8191e&autoAuth=true&ctid=8e9749c8-eb2c-4a24-bdf5-d4f3510f7622&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D",
                     
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="Domicílios por Estado e Categoria"),
-                dcc.Tab(
-                    html.Iframe(
-                        id='plot',
-                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
-
-                        src="https://app.powerbi.com/reportEmbed?reportId=425b03a7-7b37-43d2-ac73-33a34a8e9e46&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
-                    
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="Barras População"),
-                dcc.Tab(
-                    html.Iframe(
-                        id='plot',
-                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
-
-                        src="https://app.powerbi.com/reportEmbed?reportId=83003062-249b-48bf-94b8-e583212296f9&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
-                    
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '80vh', 'padding': '0px'}
                     ), label="Mapa População"),
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
                         sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
 
-                        src="https://app.powerbi.com/reportEmbed?reportId=3ed8ce18-db14-429f-b898-27df3665b06d&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
+                        src="https://app.powerbi.com/reportEmbed?reportId=a42bc770-2706-47db-9261-4a432dd56b50&autoAuth=true&ctid=8e9749c8-eb2c-4a24-bdf5-d4f3510f7622&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D",
                     
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '80vh', 'padding': '0px'}
+                    ), label="Barras População"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
+
+                        src="https://app.powerbi.com/reportEmbed?reportId=153de6be-a79f-42b6-8b3a-ce2ea150f5f8&autoAuth=true&ctid=8e9749c8-eb2c-4a24-bdf5-d4f3510f7622&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '80vh', 'padding': '0px'}
+                    ), label="População por Idade"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
+
+                        src="https://app.powerbi.com/reportEmbed?reportId=bd841c94-5167-44fb-8061-4dfee4260daa&autoAuth=true&ctid=8e9749c8-eb2c-4a24-bdf5-d4f3510f7622&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '80vh', 'padding': '0px'}
                     ), label="Mapa Domicílios"),
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
                         sandbox='allow-same-origin allow-scripts allow-popups allow-forms allow-cross-origin',
 
-                        src="https://app.powerbi.com/reportEmbed?reportId=c4278dba-e164-4763-8854-a8f14402fe4e&autoAuth=true&ctid=51ebcf31-5839-412e-83bb-801a2ba78627&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1yZWRpcmVjdC5hbmFseXNpcy53aW5kb3dzLm5ldC8ifQ%3D%3D",
+                        src="https://app.powerbi.com/reportEmbed?reportId=4551a5b3-706b-4345-bf5a-71c2b6987d51&autoAuth=true&ctid=8e9749c8-eb2c-4a24-bdf5-d4f3510f7622&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D",
                     
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="População por Idade")
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '80vh', 'padding': '0px'}
+                    ), label="Domicílios por Estado e Categoria"),           
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
         
@@ -133,11 +133,38 @@ zoho = html.Div([
                         id='plot',
                         #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
 
-                        src="https://analytics.zoho.com/open-view/2237381000000004442",
+                        src="https://analytics.zoho.com/open-view/2255331000000003112",
                     
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="População por Idade e Região"),
-                    dcc.Tab(
+                ), label="População por Ano e Estado"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
+
+                        src="https://analytics.zoho.com/open-view/2251342000000003775",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                ), label="Mapa População"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
+
+                        src="https://analytics.zoho.com/open-view/2251342000000003297",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                ), label="Barras População"),
+                dcc.Tab(
+                    html.Iframe(
+                        id='plot',
+                        #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
+
+                        src="https://analytics.zoho.com/open-view/2252342000000003772",
+                    
+                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
+                ), label="População por Idade"),
+                dcc.Tab(
                     html.Iframe(
                         id='plot',
                         #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
@@ -145,17 +172,8 @@ zoho = html.Div([
                         src="https://analytics.zoho.com/open-view/2237381000000004952/a8ea56c880aed24e60b48af7315e445f",
                     
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="Mapa Domicílios"),
-                    dcc.Tab(
-                    html.Iframe(
-                        id='plot',
-                        #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
-
-                        src="https://analytics.zoho.com/open-view/2237381000000007048",
-                    
-                        style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="Mapa População"),
-                    dcc.Tab(
+                ), label="Mapa Domicílios"),
+                dcc.Tab(
                     html.Iframe(
                         id='plot',
                         #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
@@ -163,7 +181,7 @@ zoho = html.Div([
                         src="https://analytics.zoho.com/open-view/2240641000000003762",
                     
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
-                    ), label="Barra Domicílios"),
+                ), label="Domicílios por Estado e Categoria"),
             ])
         ], style={'height' : '100vh', 'padding': '0px'})
 

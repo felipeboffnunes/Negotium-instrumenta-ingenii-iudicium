@@ -4,5 +4,3 @@ dash-renderer
 dash-html-components
 dash-core-components
 dash-bootstrap-components
-altair
-vega-datasets
