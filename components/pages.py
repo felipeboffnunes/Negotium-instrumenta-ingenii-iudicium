@@ -55,7 +55,7 @@ tableau = html.Div([
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
-                        sandbox='allow-same-origin allow-scripts',
+                        sandbox='allow-same-origin allow-scripts allow-popups',
 
                         src="https://public.tableau.com/views/CensusBrazil2010-CirclesResidences/Painel4?:display_count=y&publish=yes&:origin=viz_share_link:showVizHome=no&:embed=true",
             
@@ -72,7 +72,7 @@ power_bi = html.Div([
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
-                        sandbox='allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-popups allow-forms',
+                        sandbox='allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-popups allow-forms allow-downloads',
 
                         src="https://app.powerbi.com/reportEmbed?reportId=176dce97-cbdb-42a9-8e9c-58acd4f8beb0&autoAuth=true&ctid=8e9749c8-eb2c-4a24-bdf5-d4f3510f7622&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D",
                     
