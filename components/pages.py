@@ -77,7 +77,8 @@ power_bi = html.Div([
                         src="https://app.powerbi.com/reportEmbed?reportId=176dce97-cbdb-42a9-8e9c-58acd4f8beb0&autoAuth=true&ctid=8e9749c8-eb2c-4a24-bdf5-d4f3510f7622&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D",
                     
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '80vh', 'padding': '0px'}
-                    ), label="População por Ano e Estado"),
+                    ), 
+                label="População por Ano e Estado"),
                 dcc.Tab(
                     html.Iframe(
                         id='plot',
@@ -169,7 +170,7 @@ zoho = html.Div([
                         id='plot',
                         #sandbox='allow-same-origin allow-scripts allow-popups allow-forms',
 
-                        src="https://analytics.zoho.com/open-view/2237381000000004952/a8ea56c880aed24e60b48af7315e445f",
+                        src="https://analytics.zoho.com/open-view/2240641000000013151",
                     
                         style={'borderWidth': '0px', 'width' : '100%', 'height' : '85vh', 'padding': '0px'}
                 ), label="Mapa Domicílios"),
